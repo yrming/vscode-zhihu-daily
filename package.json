@@ -1,0 +1,90 @@
+{
+  "name": "zhihu",
+  "displayName": "Zhihu",
+  "description": "Zhihu for VS Code",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:vscodeZhihu"
+  ],
+  "icon": "icon.png",
+  "main": "./src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vscodeZhihu",
+          "title": "Zhihu Daily",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "vscodeZhihu": [
+        {
+          "id": "vscodeZhihu",
+          "name": ""
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "vscodeZhihu.refresh",
+          "group": "navigation",
+          "when": "view == vscodeZhihu"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "vscodeZhihu.see",
+          "when": "view == vscodeZhihu &&  viewItem == see",
+          "group": "inline"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vscodeZhihu.refresh",
+        "title": "刷新",
+        "icon": {
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "vscodeZhihu.see",
+        "title": "查看详情",
+        "icon": {
+          "light": "resources/light/eye.svg",
+          "dark": "resources/dark/eye.svg"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.28",
+    "eslint": "^5.13.0",
+    "@types/node": "^10.12.21",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "superagent": "^5.1.0",
+    "image-downloader": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yrming/vscode-zhihu"
+  },
+  "publisher": "YRM"
+}
