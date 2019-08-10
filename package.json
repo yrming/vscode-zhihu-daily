@@ -1,8 +1,8 @@
 {
   "name": "zhihu",
-  "displayName": "Zhihu",
+  "displayName": "Zhihu Daily",
   "description": "Zhihu Daily for VS Code",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.36.0"
   },

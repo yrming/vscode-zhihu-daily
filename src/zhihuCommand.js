@@ -9,6 +9,9 @@ function getWebviewContent(node) {
         <title></title>
         <link rel="stylesheet" href="${node.css}" type="text/css" />
         <style>
+          body {
+            background-color: transparent;
+          }
           .main-wrap {
             max-width: 600px;
             min-width: 300px;
