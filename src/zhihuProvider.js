@@ -90,7 +90,7 @@ class ZhihuProvider {
   getTreeItem(element) {
     return {
       label: element.title,
-      tooltip: element.type === 'body' ? '' : element.title,
+      tooltip: element.type === 'body' ? element.content : element.title,
       iconPath: element.type === 'body' ? undefined : path.join(__filename, '..', '..', 'resources', 'pictures', `${element.id}.png`),
       description: element.type === 'body' ? element.content : '',
       collapsibleState: element.type === 'body' ? vscode.TreeItemCollapsibleState.None : vscode.TreeItemCollapsibleState.Expanded,
